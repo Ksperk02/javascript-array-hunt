@@ -94,42 +94,93 @@ $(document).ready(function () {
         Output them to td#firstLast
          */
 
+        var first = myArray[0];
+        var lastIndex = myArray.length - 1;
+        var last = myArray[lastIndex];
+
+        $("td#firstLast").text(first + ", " + last);
 
         /*
         Find the first string that contains an 'n'.
         Output it to td#firstEnn
          */
 
+        for (var n = 0; n < myArray.length; n++) {
+            if (myArray[n].includes("n")) {
+                $("td#firstEnn").text(myArray[n]);
+                break;
+            }
+        }
 
         /*
         Find all of the strings with less than 6 characters.
         Output them to td#lessThanSix
          */
 
+        var lt6 = [];
 
+        for (i = 0; i < myArray.length; i++) {
+            if (myArray[i].length < 6) {
+                lt6.push(myArray[i]);
+            }
+        }
+
+        $("td#lessThanSix").text(lt6);
         /*
         Find the longest string in the array.
         Output it to td#longName
          */
 
+        var length = 0;
+        var longest;
+
+        for (i = 0; i < myArray.length; i++) {
+            if (myArray[i].length > length) {
+                length = myArray[i].length;
+                longest = myArray[i];
+            }
+        }
+
+        $("td#longName").text(longest);
 
         /*
         Find all of the strings that do not contain the letter 's'.
         Output them to td#noEss
          */
 
+        var noS = [];
+
+        for (var aWord of myArray) {
+            if (!aWord.includes("s")) {
+                noS.push(aWord);
+            }
+        }
+
+        $("td#noEss").text(noS);
 
         /*
         Output all of the strings, but with all of their vowels
         in uppercase, to td#upperVowels
          */
 
+        var all = myArray.toString();
+        var vowel = all.toUpperCase();
+
+        $("td#upperVowels").text(vowel);
+
 
         /*
         Output all of the strings in reverse order and separated by
         ' - ' to td#reverseDash
          */
+        var words = myArray.split("");
+        words.reverse;
 
+        for (n = 9; n >= myArray.length; n -= 1) {
+            var oneWord = words[i];
+        }
+
+        $("td#reverseDash").text(oneWord);
 
     }
 
